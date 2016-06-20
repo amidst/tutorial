@@ -27,11 +27,11 @@
         <dependency>
             <groupId>com.hugin</groupId>
             <artifactId>hugin</artifactId>
-            <scope>compile</scope>
+            <scope>system</scope>
             <systemPath>${project.basedir}/lib/hgapi83_amidst-64.jar</systemPath>
+            <version>1.0.0</version>
         </dependency>
 
         <!-- ... -->
     </dependencies>
 </project>
-         
