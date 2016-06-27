@@ -1,61 +1,48 @@
 package eu.amidst.tutorial.usingAmidst.examples;
 
-import eu.amidst.core.datastream.DataInstance;
-import eu.amidst.core.datastream.DataStream;
 import eu.amidst.core.distribution.Distribution;
-import eu.amidst.core.inference.ImportanceSampling;
 import eu.amidst.core.inference.InferenceAlgorithm;
-import eu.amidst.core.inference.InferenceEngine;
 import eu.amidst.core.inference.messagepassing.VMP;
-import eu.amidst.core.io.DataStreamLoader;
+import eu.amidst.core.io.BayesianNetworkLoader;
 import eu.amidst.core.models.BayesianNetwork;
 import eu.amidst.core.variables.Assignment;
 import eu.amidst.core.variables.HashMapAssignment;
 import eu.amidst.core.variables.Variable;
-import eu.amidst.huginlink.inference.HuginInference;
-import eu.amidst.latentvariablemodels.staticmodels.FactorAnalysis;
-import eu.amidst.latentvariablemodels.staticmodels.Model;
+import eu.amidst.core.variables.Variables;
+
+import java.io.IOException;
 
 /**
  * Created by rcabanas on 23/05/16.
  */
 public class StaticModelInference {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        //Load the datastream
-        String filename = "datasets/simulated/exampleDS_d0_c5.arff";
-        DataStream<DataInstance> data = DataStreamLoader.openFromFile(filename);
-
-        //Learn the model
-        Model model = new FactorAnalysis(data.getAttributes());
-        ((FactorAnalysis)model).setNumberOfLatentVariables(3);
-        model.updateModel(data);
-        BayesianNetwork bn = model.getModel();
-
-        System.out.println(bn);
-
+        BayesianNetwork bn  = BayesianNetworkLoader.loadFromFile("networks/simulated/exampleBN.bn");
+        Variables variables = bn.getVariables();
 
         //Variabeles of interest
-        Variable varTarget = bn.getVariables().getVariableByName("LatentVar2");
+        Variable varTarget = variables.getVariableByName("LatentVar1");
         Variable varObserved = null;
 
         //we set the evidence
         Assignment assignment = new HashMapAssignment(2);
-        varObserved = bn.getVariables().getVariableByName("GaussianVar1");
-        assignment.setValue(varObserved,6.5);
+        varObserved = variables.getVariableByName("Income");
+        assignment.setValue(varObserved,0.0);
 
         //we set the algorithm
-        InferenceAlgorithm infer = new ImportanceSampling(); //new HuginInference(); //new VMP();
+        InferenceAlgorithm infer = new VMP(); //new HuginInference(); new ImportanceSampling();
         infer.setModel(bn);
         infer.setEvidence(assignment);
 
         //query
         infer.runInference();
         Distribution p = infer.getPosterior(varTarget);
-        System.out.println("P(LatentVar2|GaussianVar1=6.5) = "+p);
+        System.out.println("P(LatentVar1|Income=0.0) = "+p);
 
-
+        //Or some more refined queries
+        System.out.println("P(0.7<LatentVar1<6.59 |Income=0.0) = " + infer.getExpectedValue(varTarget, v -> (0.7 < v && v < 6.59) ? 1.0 : 0.0 ));
 
     }
 
