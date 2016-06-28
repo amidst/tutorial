@@ -37,7 +37,7 @@ public class DynamicModelLearning {
         DynamicBayesianNetworkWriter.save(dbn, "networks/simulated/exampleDBN.bn");
 
         // Save with hugin format
-        DynamicBayesianNetworkWriterToHugin.save(dbn, "networks/simulated/exampleDBN.net");
+        //DynamicBayesianNetworkWriterToHugin.save(dbn, "networks/simulated/exampleDBN.net");
 
     }
 

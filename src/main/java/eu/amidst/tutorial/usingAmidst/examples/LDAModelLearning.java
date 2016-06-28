@@ -27,13 +27,11 @@ import java.io.IOException;
  * Created by rcabanas on 23/05/16.
  */
 public class LDAModelLearning {
-    public static void main(String[] args) throws ExceptionHugin, IOException {
+    public static void main(String[] args) throws  IOException {
 
         //Load the datastream
         String filename = "datasets/simulated/docs.nips.small.arff";
         DataStream<DataInstance> data = DataStreamLoader.open(filename);
-        //final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-        //DataFlink<DataInstance> data = DataFlinkLoader.loadDataFromFile(env, filename, false);
 
         //Learn the model
         Model model = new LDA(data.getAttributes());

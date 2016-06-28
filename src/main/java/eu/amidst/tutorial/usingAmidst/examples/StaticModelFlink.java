@@ -35,7 +35,7 @@ public class StaticModelFlink {
         BayesianNetworkWriter.save(bn, "networks/simulated/exampleBN.bn");
 
         // Save with hugin format
-        BayesianNetworkWriterToHugin.save(bn, "networks/simulated/exampleBN.net");
+        //BayesianNetworkWriterToHugin.save(bn, "networks/simulated/exampleBN.net");
 
     }
 
