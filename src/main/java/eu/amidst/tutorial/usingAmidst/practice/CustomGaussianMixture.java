@@ -1,9 +1,14 @@
 package eu.amidst.tutorial.usingAmidst.practice;
 
 import eu.amidst.core.datastream.Attributes;
+import eu.amidst.core.datastream.DataInstance;
+import eu.amidst.core.datastream.DataStream;
+import eu.amidst.core.io.DataStreamLoader;
+import eu.amidst.core.models.BayesianNetwork;
 import eu.amidst.core.models.DAG;
 import eu.amidst.core.variables.Variable;
 import eu.amidst.core.variables.Variables;
+import eu.amidst.latentvariablemodels.staticmodels.FactorAnalysis;
 import eu.amidst.latentvariablemodels.staticmodels.Model;
 import eu.amidst.latentvariablemodels.staticmodels.exceptions.WrongConfigurationException;
 
@@ -44,5 +49,20 @@ public class CustomGaussianMixture extends Model{
         this.vars = variables;
 
     }
+
+    //Method for testing the custom model
+    public static void main(String[] args) {
+        String filename = "datasets/simulated/cajamar.arff";
+        DataStream<DataInstance> data = DataStreamLoader.open(filename);
+
+        //Learn the model
+        Model model = new CustomGaussianMixture(data.getAttributes());
+
+        model.updateModel(data);
+        BayesianNetwork bn = model.getModel();
+
+        System.out.println(bn);
+    }
+
 
 }
