@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98cc7c76-9f13-4336-8805-fc2ab20c0b28" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixture.class" afterPath="$PROJECT_DIR$/target/classes/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixture.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.class" afterPath="$PROJECT_DIR$/target/classes/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixtureTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilterTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networks/simulated/exampleBN.bn" afterPath="$PROJECT_DIR$/networks/simulated/exampleBN.bn" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixture.java" afterPath="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.java" afterPath="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.java" />
     </list>
     <ignored path="tutorial.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +51,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomKalmanFilter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomKalmanFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27920228">
+            <state vertical-scroll-proportion="0.0">
               <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomGaussianMixtureTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixtureTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomKalmanFilterTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -72,33 +91,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateCajamarDataContinuousTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/examples/CreateCajamarDataContinuousTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DynamicModelInferenceTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DynamicModelInferenceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/examples/DynamicModelInferenceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.54989815">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParallelTanExampleTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/examples/ParallelTanExampleTest.java">
+      <file leaf-file-name="DynamicModelInference.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/examples/DynamicModelInference.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="9" />
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,6 +176,8 @@
         <option value="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixture.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/examples/error.java" />
+        <option value="$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixtureTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilterTest.java" />
       </list>
     </option>
   </component>
@@ -291,6 +300,40 @@
               <option name="myItemId" value="usingAmidst" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="practice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="usingAmidst" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -389,6 +432,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/examples" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="eu.amidst.tutorial.usingAmidst.practice" />
       <recent name="eu.amidst.tutorial.usingAmidst.examples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -397,7 +441,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/eu/amidst/eu/tutorial/usingAmidst/examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CustomKalmanFilter">
+  <component name="RunManager" selected="JUnit.eu.amidst.tutorial.usingAmidst in tutorial">
     <configuration default="false" name="CreateCajamarDataContinuousTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1039,24 +1083,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467815984863</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed bug in CustomKalmanFilter and added main methods in practice files&#10;">
+      <created>1467816965480</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1467816965480</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_tutorial - 2016.07.06 at 16h 18m 52s.xml">
-      <configuration name="All in tutorial" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_tutorial - 2016.07.06 at 16h 31m 11s.xml">
       <configuration name="All in tutorial" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateCajamarDataContinuousTest - 2016.07.06 at 16h 19m 34s.xml">
-      <configuration name="CreateCajamarDataContinuousTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateCajamarDataContinuousTest - 2016.07.06 at 16h 20m 04s.xml">
-      <configuration name="CreateCajamarDataContinuousTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateCajamarDataContinuousTest - 2016.07.06 at 16h 24m 31s.xml">
-      <configuration name="CreateCajamarDataContinuousTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DynamicModelInferenceTest_test - 2016.07.06 at 16h 34m 29s.xml">
       <configuration name="DynamicModelInferenceTest.test" configurationId="JUnit" />
@@ -1072,6 +1110,18 @@
     </history-entry>
     <history-entry file="eu_amidst_tutorial_usingAmidst_examples_in_tutorial - 2016.07.06 at 16h 38m 29s.xml">
       <configuration name="eu.amidst.tutorial.usingAmidst.examples in tutorial" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="eu_amidst_tutorial_usingAmidst_in_tutorial - 2016.07.06 at 16h 57m 47s.xml">
+      <configuration name="eu.amidst.tutorial.usingAmidst in tutorial" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="eu_amidst_tutorial_usingAmidst_in_tutorial - 2016.07.06 at 16h 58m 08s.xml">
+      <configuration name="eu.amidst.tutorial.usingAmidst in tutorial" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="eu_amidst_tutorial_usingAmidst_in_tutorial - 2016.07.06 at 16h 58m 17s.xml">
+      <configuration name="eu.amidst.tutorial.usingAmidst in tutorial" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="eu_amidst_tutorial_usingAmidst_in_tutorial - 2016.07.06 at 16h 59m 00s.xml">
+      <configuration name="eu.amidst.tutorial.usingAmidst in tutorial" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1094,7 +1144,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22940226" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02328767" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2890411" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2890411" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1128,7 +1178,8 @@
     <MESSAGE value="issue #1: added travis conf. file" />
     <MESSAGE value="simple change" />
     <MESSAGE value="issue #1: added examples tests&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="issue #1: added examples tests&#10;" />
+    <MESSAGE value="fixed bug in CustomKalmanFilter and added main methods in practice files&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in CustomKalmanFilter and added main methods in practice files&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1149,14 +1200,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1366,14 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/examples/DynamicModelInference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/simulated/cajamar.arff">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1496,14 +1531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/examples/DynamicModelInferenceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/examples/ParallelTanExampleTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1554,8 +1581,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27920228">
+        <state vertical-scroll-proportion="0.0">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomGaussianMixtureTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/practice/CustomKalmanFilterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/amidst/tutorial/usingAmidst/examples/DynamicModelInference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/eu/amidst/tutorial/usingAmidst/examples/DynamicModelInferenceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54989815">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
