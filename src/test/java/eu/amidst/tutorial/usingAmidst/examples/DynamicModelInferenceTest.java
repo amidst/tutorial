@@ -17,6 +17,7 @@ public class DynamicModelInferenceTest extends TestCase {
         System.out.println("Working Directory = " +
                 System.getProperty("user.dir"));
 
+        DynamicModelLearning.main(null);
         DynamicModelInference.main(null);
     }
 

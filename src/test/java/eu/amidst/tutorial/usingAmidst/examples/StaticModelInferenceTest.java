@@ -13,6 +13,7 @@ public class StaticModelInferenceTest extends TestCase {
 
     @Test
     public void test() throws Exception {
+        StaticModelLearning.main(null);
         StaticModelInference.main(null);
     }
 
