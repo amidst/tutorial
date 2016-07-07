@@ -2,7 +2,12 @@
 
 # Tutorial of the AMIDST Toolbox
 
-This respository contains a tutorial with code examples of the [AMIDST toolbox](http://amidst.github.io/toolbox). This tutorial focuses on how to learn the predefined latent varaibles (i.e. a probabilistic graphical model with unobserved variables) models included in AMIDST. Two learning schemes are showed:
+This respository contains a tutorial with code examples of the [AMIDST toolbox](http://amidst.github.io/toolbox). The slides of this tutorial can be found in the following link:
+
+https://github.com/amidst/tutorial/raw/master/doc/slides/AMIDST_slides.pdf
+
+
+This tutorial focuses on how to learn the predefined latent varaibles (i.e. a probabilistic graphical model with unobserved variables) models included in AMIDST. Two learning schemes are showed:
 
 * Parellel multi-core learning based on Java 8 streams.
 * Distributed learning functionalities based on [Apache Flink](https://flink.apache.org/).  
