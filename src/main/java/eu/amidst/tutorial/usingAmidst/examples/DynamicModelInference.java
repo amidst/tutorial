@@ -19,47 +19,49 @@ import java.io.IOException;
  */
 public class DynamicModelInference {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        DynamicBayesianNetwork dbn = DynamicBayesianNetworkLoader.loadFromFile("networks/simulated/exampleDBN.dbn");
+		//Load the DBN
+		DynamicBayesianNetwork dbn = DynamicBayesianNetworkLoader
+				.loadFromFile("networks/simulated/BCCDBN.dbn");
 
-        System.out.println(dbn);
+		//Testing dataset to predict
+		String path = "datasets/simulated/";
+		String filename = "BCC_month1.arff";
+		DataStream<DynamicDataInstance> dataPredict =
+				DynamicDataStreamLoader.loadFromFile(path+filename);
 
-        //Testing dataset
-        String filenamePredict = "datasets/simulated/cajamar.arff";
-        DataStream<DynamicDataInstance> dataPredict = DynamicDataStreamLoader.loadFromFile(filenamePredict);
+		//Select the inference algorithm
+		InferenceAlgorithmForDBN infer =
+				new FactoredFrontierForDBN(new ImportanceSampling());
+		infer.setModel(dbn);
 
-        //Select the inference algorithm
-        InferenceAlgorithmForDBN infer = new FactoredFrontierForDBN(new ImportanceSampling()); // new ImportanceSampling(),  new VMP(),
-        infer.setModel(dbn);
+		// Set the target variables
+		Variable varTarget = dbn.getDynamicVariables()
+                    .getVariableByName("discreteHiddenVar");
 
+		//Predict the hidden variable at time t and t+2
+		UnivariateDistribution p = null;
+		int t = 0;
+		for (DynamicDataInstance instance : dataPredict) {
 
-        Variable varTarget = dbn.getDynamicVariables().getVariableByName("discreteHiddenVar");
-        UnivariateDistribution posterior = null;
+			infer.addDynamicEvidence(instance);
+			infer.runInference();
 
-        //Classify each instance
-        int t = 0;
-        for (DynamicDataInstance instance : dataPredict) {
+			p = infer.getFilteredPosterior(varTarget);
+			System.out.println("t="+t+", P(discreteHiddenVar|E)="+ p);
 
-            infer.addDynamicEvidence(instance);
-            infer.runInference();
+			p = infer.getPredictivePosterior(varTarget, 2);
+			System.out.println("t="+t+"+2, P(discreteHiddenVar|E)="+p);
 
-            posterior = infer.getFilteredPosterior(varTarget);
-            System.out.println("t="+t+", P(discreteHiddenVar | Evidence)  = " + posterior);
-
-            posterior = infer.getPredictivePosterior(varTarget, 2);
-            //Display the output
-            System.out.println("t="+t+"+5, P(discreteHiddenVar | Evidence)  = " + posterior);
-
-
-            t++;
-        }
-
-
+			t++;
+		}
 
 
 
-    }
+
+
+	}
 
 
 }

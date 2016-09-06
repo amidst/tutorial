@@ -18,25 +18,25 @@ public class DynamicModelLearning {
 
     public static void main(String[] args) throws IOException, ExceptionHugin {
 
-        //Load the datastream
-        String filename = "datasets/simulated/cajamar.arff";
-        DataStream<DynamicDataInstance> data = DynamicDataStreamLoader.loadFromFile(filename);
+
+		//Load the data stream
+		String path = "datasets/simulated/";
+		String filename = path+"BCC_month0.arff";
+		DataStream<DynamicDataInstance> data =
+				DynamicDataStreamLoader.loadFromFile(filename);
+
+		//Learn the dynamic model
+		DynamicModel model =
+				new HiddenMarkovModel(data.getAttributes());
+		model.updateModel(data);
+
+		// Print the BN and save it
+		DynamicBayesianNetwork dbn = model.getModel();
+		System.out.println(dbn);
+		DynamicBayesianNetworkWriter
+				.save(dbn, "networks/simulated/BCCDBN.dbn");
 
 
-        //Learn the model
-        DynamicModel model = new HiddenMarkovModel(data.getAttributes());
-        model.updateModel(data);
-        DynamicBayesianNetwork dbn = model.getModel();
-
-
-        System.out.println(dbn);
-
-
-        // Save with .bn format
-        DynamicBayesianNetworkWriter.save(dbn, "networks/simulated/exampleDBN.dbn");
-
-        // Save with hugin format
-        //DynamicBayesianNetworkWriterToHugin.save(dbn, "networks/simulated/exampleDBN.net");
 
     }
 

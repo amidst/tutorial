@@ -8,18 +8,15 @@ import eu.amidst.core.datastream.DataStream;
 import eu.amidst.core.io.BayesianNetworkWriter;
 import eu.amidst.core.io.DataStreamLoader;
 import eu.amidst.core.models.BayesianNetwork;
-import eu.amidst.huginlink.io.BayesianNetworkWriterToHugin;
-import eu.amidst.latentvariablemodels.staticmodels.FactorAnalysis;
-import eu.amidst.latentvariablemodels.staticmodels.GaussianMixture;
-import eu.amidst.latentvariablemodels.staticmodels.MixtureOfFactorAnalysers;
 import eu.amidst.latentvariablemodels.staticmodels.Model;
+import eu.amidst.latentvariablemodels.staticmodels.classifiers.NaiveBayesClassifier;
 
 import java.io.IOException;
 
 /**
  * Created by rcabanas on 23/05/16.
  */
-public class StaticModelLearning {
+public class CreateNBs {
 	public static void main(String[] args) throws ExceptionHugin, IOException {
 
 		//Load the datastream
@@ -29,7 +26,8 @@ public class StaticModelLearning {
 				DataStreamLoader.open(filename);
 
 		//Learn the model
-		Model model = new GaussianMixture(data.getAttributes());
+		Model model = new NaiveBayesClassifier(data.getAttributes());
+		((NaiveBayesClassifier)model).setClassName("Default");
 		model.updateModel(data);
 		BayesianNetwork bn = model.getModel();
 

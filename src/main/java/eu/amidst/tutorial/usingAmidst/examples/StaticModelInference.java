@@ -17,33 +17,31 @@ import java.io.IOException;
  */
 public class StaticModelInference {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        BayesianNetwork bn  = BayesianNetworkLoader.loadFromFile("networks/simulated/exampleBN.bn");
-        Variables variables = bn.getVariables();
+		BayesianNetwork bn  = BayesianNetworkLoader.loadFromFile("networks/simulated/BCCBN.bn");
+		Variables variables = bn.getVariables();
 
-        //Variabeles of interest
-        Variable varTarget = variables.getVariableByName("LatentVar1");
-        Variable varObserved = null;
+		//Target variable
+		Variable varTarget = variables.getVariableByName("HiddenVar");
 
-        //we set the evidence
-        Assignment assignment = new HashMapAssignment(2);
-        varObserved = variables.getVariableByName("Income");
-        assignment.setValue(varObserved,0.0);
+		//we set the evidence
+		Assignment assignment = new HashMapAssignment(2);
+		assignment.setValue(variables.getVariableByName("Income"), 180);
+		assignment.setValue(variables.getVariableByName("Expenses"),100);
+		assignment.setValue(variables.getVariableByName("TotalCredit"),80);
 
-        //we set the algorithm
-        InferenceAlgorithm infer = new VMP(); //new HuginInference(); new ImportanceSampling();
-        infer.setModel(bn);
-        infer.setEvidence(assignment);
+		//we set the algorithm
+		InferenceAlgorithm infer = new VMP();
+		infer.setModel(bn);
+		infer.setEvidence(assignment);
 
-        //query
-        infer.runInference();
-        Distribution p = infer.getPosterior(varTarget);
-        System.out.println("P(LatentVar1|Income=0.0) = "+p);
+		//query
+		infer.runInference();
+		Distribution p = infer.getPosterior(varTarget);
+		System.out.println("P(HiddenVar|Evidence) = "+p);
 
-        //Or some more refined queries
-        System.out.println("P(0.7<LatentVar1<6.59 |Income=0.0) = " + infer.getExpectedValue(varTarget, v -> (0.7 < v && v < 6.59) ? 1.0 : 0.0 ));
 
-    }
+	}
 
 }
