@@ -34,7 +34,7 @@
         <!-- AMIDST repository in github -->
         <repository>
             <id>amidstRepo</id>
-            <url>http://amidsttoolbox.com/mvn-repo</url>
+            <url>https://raw.github.com/amidst/toolbox/mvn-repo/</url>
         </repository>
     </repositories>
 
