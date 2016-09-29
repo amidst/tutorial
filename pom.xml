@@ -34,8 +34,7 @@
         <!-- AMIDST repository in github -->
         <repository>
             <id>amidstRepo</id>
-            <!--url>https://raw.github.com/amidst/toolbox/mvn-repo/</url-->
-            <url>https://amidsttolbox.com/mvn-repo</url>
+            <url>https://amidsttoolbox.com/mvn-repo</url>
         </repository>
     </repositories>
 
@@ -44,7 +43,7 @@
         <dependency>
             <groupId>eu.amidst</groupId>
             <artifactId>latent-variable-models</artifactId>
-            <version>0.6.0-alpha</version>
+            <version>0.5.2</version>
             <scope>compile</scope>
         </dependency>
 
