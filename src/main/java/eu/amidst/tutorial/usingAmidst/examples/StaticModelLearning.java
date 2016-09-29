@@ -39,7 +39,7 @@ public class StaticModelLearning {
 
 		//Update the model with new information
 		for(int i=1; i<12; i++) {
-			filename = path+"BCC_month"+i+".arff";
+			filename = path+"BCC_month"+".arff";
 			data = DataStreamLoader.open(filename);
 			model.updateModel(data);
 			System.out.println(model.getModel());

@@ -24,22 +24,15 @@ public class ConceptDrift {
 						DataStreamLoader.open(filename);
 
 		//We create a NaiveBayesVirtualConceptDriftDetector object
-		NaiveBayesVirtualConceptDriftDetector virtualDriftDetector =
-						new NaiveBayesVirtualConceptDriftDetector();
-
-		//We set class variable
-		virtualDriftDetector.setClassIndex(2);
+		NaiveBayesVirtualConceptDriftDetector virtualDriftDetector = new NaiveBayesVirtualConceptDriftDetector();
 
 		//We associate the stream to the detector
 		virtualDriftDetector.setData(data);
 
-		//We fix the size of the window
-		virtualDriftDetector.setWindowsSize(windowSize);
-
-		//We fix the number of global latent variables
+		//We set class variable
+		virtualDriftDetector.setClassIndex(2);
+		virtualDriftDetector.setWindowsSize(500);
 		virtualDriftDetector.setNumberOfGlobalVars(1);
-
-		//We fix the size of the window
 		virtualDriftDetector.setTransitionVariance(0.1);
 
 		//We should invoke this method before processing any data

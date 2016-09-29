@@ -23,26 +23,34 @@ import java.io.IOException;
 public class StaticModelFlink {
 	public static void main(String[] args) throws IOException, ExceptionHugin {
 		//Set-up Flink session.
-		Configuration conf = new Configuration();
-		conf.setInteger("taskmanager.network.numberOfBuffers", 12000);
-		final ExecutionEnvironment env = ExecutionEnvironment.createLocalEnvironment(conf);
-		env.getConfig().disableSysoutLogging();
-		env.setParallelism(Main.PARALLELISM);
+		final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
 		//Load the data stream (with Flink)
 		String path = "datasets/simulated/";
-		String filename = path+"BCCDist_month0.arff";
+		String filename = path+"dataFlink_month0.arff";
 		DataFlink<DataInstance> data =
 				DataFlinkLoader.loadDataFromFolder(env, filename, false);
 
-		//Learn the model
+		//Build the model
 		Model model = new GaussianMixture(data.getAttributes());
+
+		//Learn the model
 		model.updateModel(data);
 		BayesianNetwork bn = model.getModel();
 
 		// Print the BN and save it
 		System.out.println(bn);
 		BayesianNetworkWriter.save(bn, "networks/simulated/BCCBN.bn");
+
+
+		//Update your model
+		for(int i=1; i<12; i++) {
+			filename = path+"dataFlink_month"+i+".arff";
+			data = DataFlinkLoader.loadDataFromFolder(env, filename,false);
+			model.updateModel(data);
+
+		}
+
 
 	}
 

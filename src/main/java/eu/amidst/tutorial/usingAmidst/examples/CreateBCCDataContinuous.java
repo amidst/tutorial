@@ -28,39 +28,20 @@ public class CreateBCCDataContinuous {
     public static void main(String[] args) throws Exception{
 
 
-		String names1[] = {"SEQUENCE_ID", "TIME_ID", "Default", "Income","Expenses","TotalCredit"};
-		String names2[] = {"SEQUENCE_ID", "TIME_ID", "Income","Expenses","TotalCredit"};
+		String names1[] = {"SEQUENCE_ID", "TIME_ID", "Income","Expenses","TotalCredit"};
 
 
         String path = "datasets/simulated/";
 
 
         for(int i=0; i<12; i++) {
-            generate(path, "BCCDefault_month"+i+".arff",500, 1,3, names1, i);
-			generate(path, "BCC_month"+i+".arff",500, 0,3, names2, i);
-
+            generate(path, "data_month"+i+".arff",500, 0,3, names1, i);
+			makeDistributed(path, "data_month"+i+".arff", "dataFlink_month"+i+".arff");
         }
 
 
 
-        DataStream<DynamicDataInstance> d1 = DynamicDataStreamLoader.loadFromFile(path+"BCCDefault_month0.arff");
 
-        for(int i=1; i<12; i++) {
-            DataStream<DynamicDataInstance> d2 = DynamicDataStreamLoader.loadFromFile(path+"BCCDefault_month"+i+".arff");
-            d1 = concat(d1,d2);
-
-        }
-
-         DataStreamWriter.writeDataToFile(d1, path + "BCCDefault.arff");
-
-
-		//generate(path, "BCCDefault.arff",6000, 1,3, names1, 1);
-
-
-
-
-
-        makeDistributed(path, "BCC_month0.arff", "BCCDist_month0.arff");
 
 
 
