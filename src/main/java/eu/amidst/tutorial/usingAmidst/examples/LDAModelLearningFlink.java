@@ -50,7 +50,7 @@ public class LDAModelLearningFlink {
         System.out.println(bn);
 
         // Save with .bn format
-        BayesianNetworkWriter.save(bn, "networks/simulated/exampleBN.bn");
+        BayesianNetworkWriter.save(bn, "networks/simulated/exampleLDA.bn");
     }
 
 }

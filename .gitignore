@@ -40,8 +40,6 @@ target/classes/*
 *.out
 *.snm
 *.toc
-*.class
-
 # Other noise
 *~
 *.bak
@@ -52,7 +50,7 @@ Archive 2.zip
 Archive.1.zip
 *.zip
 
-*.arff
+#*.arff
 huginlib/*
 maven_startup.sh
 *.jnilib
