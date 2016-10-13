@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.createdatasets;
 
 import eu.amidst.core.datastream.DataStream;
 import eu.amidst.core.io.DataStreamWriter;

@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.examples_in_slides;
 
 
 
@@ -8,10 +8,8 @@ import eu.amidst.core.datastream.DataStream;
 import eu.amidst.core.io.BayesianNetworkWriter;
 import eu.amidst.core.io.DataStreamLoader;
 import eu.amidst.core.models.BayesianNetwork;
-import eu.amidst.huginlink.io.BayesianNetworkWriterToHugin;
-import eu.amidst.latentvariablemodels.staticmodels.FactorAnalysis;
+import eu.amidst.latentvariablemodels.staticmodels.CustomGaussianMixture;
 import eu.amidst.latentvariablemodels.staticmodels.GaussianMixture;
-import eu.amidst.latentvariablemodels.staticmodels.MixtureOfFactorAnalysers;
 import eu.amidst.latentvariablemodels.staticmodels.Model;
 
 import java.io.IOException;
@@ -29,7 +27,11 @@ public class StaticModelLearning {
 				DataStreamLoader.open(filename);
 
 		//Learn the model
-		Model model = new GaussianMixture(data.getAttributes());
+		Model model =
+				new CustomGaussianMixture(data.getAttributes())
+				.setClassName("Default");
+
+
 		model.updateModel(data);
 		BayesianNetwork bn = model.getModel();
 
@@ -39,7 +41,7 @@ public class StaticModelLearning {
 
 		//Update the model with new information
 		for(int i=1; i<12; i++) {
-			filename = path+"BCC_month"+".arff";
+			filename = path+"BCC_month"+i+".arff";
 			data = DataStreamLoader.open(filename);
 			model.updateModel(data);
 			System.out.println(model.getModel());

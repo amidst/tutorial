@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.createdatasets;
 
 import eu.amidst.core.datastream.*;
 import eu.amidst.core.io.DataStreamWriter;
@@ -28,15 +28,15 @@ public class CreateBCCDataContinuous {
     public static void main(String[] args) throws Exception{
 
 
-		String names1[] = {"SEQUENCE_ID", "TIME_ID", "Income","Expenses","TotalCredit"};
+		String names1[] = {"SEQUENCE_ID", "TIME_ID", "Default","Income","Expenses","TotalCredit"};
 
 
         String path = "datasets/simulated/";
 
 
         for(int i=0; i<12; i++) {
-            generate(path, "data_month"+i+".arff",500, 0,3, names1, i);
-			makeDistributed(path, "data_month"+i+".arff", "dataFlink_month"+i+".arff");
+            generate(path, "BCC_month"+i+".arff",500, 1,3, names1, i);
+			makeDistributed(path, "BCC_month"+i+".arff", "BCC_Flink_month"+i+".arff");
         }
 
 

@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.examples_in_slides;
 
 
 
@@ -9,14 +9,14 @@ import eu.amidst.core.io.BayesianNetworkWriter;
 import eu.amidst.core.io.DataStreamLoader;
 import eu.amidst.core.models.BayesianNetwork;
 import eu.amidst.latentvariablemodels.staticmodels.Model;
-import eu.amidst.latentvariablemodels.staticmodels.classifiers.NaiveBayesClassifier;
+import eu.amidst.latentvariablemodels.staticmodels.ConceptDriftDetector;
 
 import java.io.IOException;
 
 /**
  * Created by rcabanas on 23/05/16.
  */
-public class CreateNBs {
+public class ConceptDriftExample {
 	public static void main(String[] args) throws ExceptionHugin, IOException {
 
 		//Load the datastream
@@ -25,22 +25,20 @@ public class CreateNBs {
 		DataStream<DataInstance> data =
 				DataStreamLoader.open(filename);
 
-		//Learn the model
-		Model model = new NaiveBayesClassifier(data.getAttributes());
-		((NaiveBayesClassifier)model).setClassName("Default");
-		model.updateModel(data);
-		BayesianNetwork bn = model.getModel();
+		//Build the model
+		Model model =
+				new ConceptDriftDetector(data.getAttributes())
+				.setClassIndex(2);
 
-		// Print the BN and save it
-		System.out.println(bn);
-		BayesianNetworkWriter.save(bn, "networks/simulated/BCCBN.bn");
+		//Learn the model
+		model.updateModel(data);
 
 		//Update the model with new information
 		for(int i=1; i<12; i++) {
 			filename = path+"BCC_month"+i+".arff";
 			data = DataStreamLoader.open(filename);
 			model.updateModel(data);
-			System.out.println(model.getModel());
+			System.out.println(model.getPosteriorDistribution("GlobalHidden_0").toString());
 		}
 
 

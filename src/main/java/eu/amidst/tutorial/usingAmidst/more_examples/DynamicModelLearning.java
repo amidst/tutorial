@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.more_examples;
 
 import COM.hugin.HAPI.ExceptionHugin;
 import eu.amidst.core.datastream.DataStream;

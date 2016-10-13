@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.examples_in_slides;
 
 import COM.hugin.HAPI.ExceptionHugin;
 import eu.amidst.core.datastream.DataInstance;
@@ -8,6 +8,7 @@ import eu.amidst.core.io.DataStreamLoader;
 import eu.amidst.core.models.BayesianNetwork;
 import eu.amidst.flinklink.core.data.DataFlink;
 import eu.amidst.flinklink.core.io.DataFlinkLoader;
+import eu.amidst.latentvariablemodels.staticmodels.CustomGaussianMixture;
 import eu.amidst.latentvariablemodels.staticmodels.FactorAnalysis;
 import eu.amidst.latentvariablemodels.staticmodels.GaussianMixture;
 import eu.amidst.latentvariablemodels.staticmodels.Model;
@@ -27,12 +28,13 @@ public class StaticModelFlink {
 
 		//Load the data stream (with Flink)
 		String path = "datasets/simulated/";
-		String filename = path+"dataFlink_month0.arff";
+		String filename = path+"BCC_Flink_month0.arff";
 		DataFlink<DataInstance> data =
-				DataFlinkLoader.loadDataFromFolder(env, filename, false);
+				DataFlinkLoader.open(env, filename, false);
 
 		//Build the model
-		Model model = new GaussianMixture(data.getAttributes());
+		Model model = new CustomGaussianMixture(data.getAttributes())
+						.setClassName("Default");
 
 		//Learn the model
 		model.updateModel(data);
@@ -45,7 +47,7 @@ public class StaticModelFlink {
 
 		//Update your model
 		for(int i=1; i<12; i++) {
-			filename = path+"dataFlink_month"+i+".arff";
+			filename = path+"BCC_Flink_month"+i+".arff";
 			data = DataFlinkLoader.loadDataFromFolder(env, filename,false);
 			model.updateModel(data);
 

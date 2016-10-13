@@ -40,8 +40,6 @@ target/classes/*
 *.out
 *.snm
 *.toc
-*.class
-
 # Other noise
 *~
 *.bak
@@ -52,7 +50,7 @@ Archive 2.zip
 Archive.1.zip
 *.zip
 
-*.arff
+
 huginlib/*
 maven_startup.sh
 *.jnilib
@@ -66,3 +64,54 @@ ignoredfolder/*
 
 #ignore target folders
 */target/*
+datasets/simulated/BCC_Flink_month0.arff/
+datasets/simulated/BCC_Flink_month1.arff/
+datasets/simulated/BCC_Flink_month10.arff/
+datasets/simulated/BCC_Flink_month11.arff/
+datasets/simulated/BCC_Flink_month2.arff/
+datasets/simulated/BCC_Flink_month3.arff/
+datasets/simulated/BCC_Flink_month4.arff/
+datasets/simulated/BCC_Flink_month5.arff/
+datasets/simulated/BCC_Flink_month6.arff/
+datasets/simulated/BCC_Flink_month7.arff/
+datasets/simulated/BCC_Flink_month8.arff/
+datasets/simulated/BCC_Flink_month9.arff/
+datasets/simulated/BCC_month0.arff
+datasets/simulated/BCC_month1.arff
+datasets/simulated/BCC_month10.arff
+datasets/simulated/BCC_month11.arff
+datasets/simulated/BCC_month2.arff
+datasets/simulated/BCC_month3.arff
+datasets/simulated/BCC_month4.arff
+datasets/simulated/BCC_month5.arff
+datasets/simulated/BCC_month6.arff
+datasets/simulated/BCC_month7.arff
+datasets/simulated/BCC_month8.arff
+datasets/simulated/BCC_month9.arff
+datasets/simulated/dataFlink_month0.arff/
+datasets/simulated/dataFlink_month1.arff/
+datasets/simulated/dataFlink_month10.arff/
+datasets/simulated/dataFlink_month11.arff/
+datasets/simulated/dataFlink_month2.arff/
+datasets/simulated/dataFlink_month3.arff/
+datasets/simulated/dataFlink_month4.arff/
+datasets/simulated/dataFlink_month5.arff/
+datasets/simulated/dataFlink_month6.arff/
+datasets/simulated/dataFlink_month7.arff/
+datasets/simulated/dataFlink_month8.arff/
+datasets/simulated/dataFlink_month9.arff/
+datasets/simulated/data_month0.arff
+datasets/simulated/data_month1.arff
+datasets/simulated/data_month10.arff
+datasets/simulated/data_month11.arff
+datasets/simulated/data_month2.arff
+datasets/simulated/data_month3.arff
+datasets/simulated/data_month4.arff
+datasets/simulated/data_month5.arff
+datasets/simulated/data_month6.arff
+datasets/simulated/data_month7.arff
+datasets/simulated/data_month8.arff
+datasets/simulated/data_month9.arff
+networks/simulated/BCCBN.bn
+networks/simulated/BCCDBN.dbn
+target/

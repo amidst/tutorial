@@ -1,4 +1,4 @@
-package eu.amidst.tutorial.usingAmidst.examples;
+package eu.amidst.tutorial.usingAmidst.more_examples;
 
 import eu.amidst.core.distribution.Distribution;
 import eu.amidst.core.inference.InferenceAlgorithm;
@@ -22,8 +22,10 @@ public class StaticModelInference {
 		BayesianNetwork bn  = BayesianNetworkLoader.loadFromFile("networks/simulated/BCCBN.bn");
 		Variables variables = bn.getVariables();
 
+		System.out.println(bn);
+
 		//Target variable
-		Variable varTarget = variables.getVariableByName("HiddenVar");
+		Variable varTarget = variables.getVariableByName("globalHiddenVar");
 
 		//we set the evidence
 		Assignment assignment = new HashMapAssignment(2);
