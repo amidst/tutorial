@@ -49,7 +49,7 @@ public class DynamicModelInference {
 
             posterior = infer.getPredictivePosterior(varTarget, 2);
             //Display the output
-            System.out.println("t="+t+"+5, P(discreteHiddenVar | Evidence)  = " + posterior);
+            System.out.println("t="+t+"+2, P(discreteHiddenVar | Evidence)  = " + posterior);
 
 
             t++;
